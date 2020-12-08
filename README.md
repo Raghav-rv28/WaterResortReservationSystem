@@ -2,12 +2,17 @@
 
 this is a simple website designed for a water resort hotel to do all the reservations and bookings.
 
-PYTHON DJANGO Useful Links:
+to start the website follow these steps:
 
-you can use the following link to see the django documentation and creating the project: https://docs.djangoproject.com/en/3.1/
-Buidling a website: https://www.youtube.com/watch?v=F5mRW0jo-U4
+1. extract files in a folder
+2. create an virtual enviroment(use python 3.8)
+3. check python version using "python --version"
+4. command for virtual enviroment is "python -m venv nameofenv"
+5. activate venv using "nameofenv\scripts\activate"
+6. install dependencies using "pip install -r requirements.txt" (if you recieve any error in the dependencies let me know)
+7. if they all install succesfully use command "python manage.py migrate".
+8. then use "python manage.py runserver".
+9. local link "https://127.0.0.1:8000"
 
-HTML5/CSS3 Useful Links:
 
-Sample Website building: https://www.youtube.com/watch?v=9cKsq14Kfsw&list=WL&index=18
-bascis Playlist: https://www.youtube.com/playlist?list=PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G
+

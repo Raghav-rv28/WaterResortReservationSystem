@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/confirm" method="POST">
+    {% csrf_token %}
+    <table class="table table-bordered">
+        <tr>
+            <th>First Name</th>
+            <td><input type="text" class="form-control" name='name' required></td>
+        </tr>
+        <tr>
+            <th>Aadhar Number</th>
+            <td><input type="text" class="form-control" name='no' required></td>
+        </tr>
+        <tr>
+            <th>No of Children</th>
+            <td><input type="number" class="form-control" name='child' required></td>
+        </tr>
+        <tr>
+            <th>Adults</th>
+            <td><input type="number" class="form-control" name='adult' required></td>
+        </tr>
+        <tr>
+            <th>Nights</th>
+            <td><input type="number" class="form-control" name='nights' required></td>
+        </tr>
+        <tr>
+            <th>Check In Date</th>
+            <td><input type="date" class="form-control" name="checkin" required></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="email" class="form-control" name="email" required></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="hidden" value="{{ request.session.val700 }}"  name="room_code">
+                <input type="submit" class="btn btn-danger" />
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

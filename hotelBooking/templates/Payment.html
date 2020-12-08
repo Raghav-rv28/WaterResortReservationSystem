@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="success" method="POST">
+            {% csrf_token %}
+        <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="rzp_test_3Ds6LcUtNdTk1B" 
+            data-amount="{{cost}}" 
+            data-currency="INR"
+            
+            data-buttontext="Pay with Razorpay"
+            data-name="Hotel Babylon"
+            data-description="Room Booking"
+            data-image="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg"
+            data-prefill.name="Hotel Babylon"
+            data-prefill.email="example@example.com"
+            data-theme.color="#00008b"
+        ></script>
+        <a href="/cancel" class="btn btn-secondary btn-sm">Cancel</a>
+        <input type="hidden" custom="Hidden Element" name="hidden">
+        </form>
+{% endblock %}

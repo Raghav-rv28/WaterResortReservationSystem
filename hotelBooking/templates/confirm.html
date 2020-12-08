@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+	<table class="table table-bordered">
+		<tr>
+			<th>Total Stay Cost</th>
+			<td>{{cost}}</td>
+		</tr>
+		<tr>
+			<th>Click here to proceed to payment:</th>
+			<td><a href="payment" class="btn btn-primary">Continue to Payment</a></td>
+		</tr>
+	</table>
+{% endblock %}
