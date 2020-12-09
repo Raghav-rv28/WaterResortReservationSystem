@@ -4,7 +4,7 @@ from django.db import models
 
 
 class rooms(models.Model):
-    Roomtypecode = models.IntegerField(max_length=100)
+    Roomtypecode = models.IntegerField()
     Roomcode = models.IntegerField()
     typename = models.TextField(max_length=15)
     capacity = models.IntegerField()
