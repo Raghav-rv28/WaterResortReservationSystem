@@ -1,19 +1,19 @@
-key_id					                     		  rzp_test_NobqtLID5BdaLn
+key_id					        =             		  rzp_test_NobqtLID5BdaLn
 
 
-key_secret				                    		afK4SB25oX9QZ2iBQVDM9s4x	
+key_secret				       =             		afK4SB25oX9QZ2iBQVDM9s4x	
 
 
-test credit card (domestic Card)		    	4111 1111 1111 1111 	
+test credit card (domestic Card)	=	    	4111 1111 1111 1111 	
 
 
-test credit card (international Card)			4012 8888 8888 1881	
+test credit card (international Card)	=		4012 8888 8888 1881	
 
 
-CVV					                           		259	
+CVV					                =           		259	
   
 
-Expiry Date			                     			Any Date	02/23
+Expiry Date			            =         			Any Date	02/23
   
 
 
