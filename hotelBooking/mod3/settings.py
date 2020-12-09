@@ -128,8 +128,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.hushmail.com'
 
 EMAIL_POST = 587
-EMAIL_HOST_USER = 'youremail@yourdomain.com'
-EMAIL_HOST_PASSWORD = 'your_password'
+EMAIL_HOST_USER = 'raghavrudhra28@gmail.com'
+EMAIL_HOST_PASSWORD = 'raj@007@GOOGL'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 {% block content %}
 <form action="/confirm" method="POST">
     {% csrf_token %}
@@ -8,7 +8,7 @@
             <td><input type="text" class="form-control" name='name' required></td>
         </tr>
         <tr>
-            <th>Aadhar Number</th>
+            <th>SIN Number</th>
             <td><input type="text" class="form-control" name='no' required></td>
         </tr>
         <tr>

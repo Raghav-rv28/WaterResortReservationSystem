@@ -1,13 +1,13 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 {% block content %}
     <form action="success" method="POST">
             {% csrf_token %}
         <script
             src="https://checkout.razorpay.com/v1/checkout.js"
-            data-key="rzp_test_3Ds6LcUtNdTk1B" 
-            data-amount="{{cost}}" 
-            data-currency="INR"
-            
+            data-key="rzp_test_NobqtLID5BdaLn"
+            data-amount="{{cost}}"
+            data-currency="CAD"
+
             data-buttontext="Pay with Razorpay"
             data-name="Hotel Babylon"
             data-description="Room Booking"

@@ -17,16 +17,23 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-from pages import views
+from pages.views import home_view, contact_view, services_view, hotel_view, blog_view
+from hotels import views
 
 urlpatterns = [
-    path('', views.home_view, name='home'),
+    path('', home_view, name='home'),
     path('booking/', include('hotels.urls')),
     path('admin/', admin.site.urls),
-    path('contact/', views.contact_view, name='contact'),
-    path('services/', views.services_view, name='services'),
-    path('blog/', views.services_view, name='blog'),
-    path('hotel/', views.hotel_view, name='hotel')
+    path('contact/', contact_view, name='contact'),
+    path('services/', services_view, name='services'),
+    path('blog/', blog_view, name='blog'),
+    path('hotel/', hotel_view, name='hotel'),
+    path("search", views.search, name='search'),
+    path("confirm", views.confirm, name='confirm'),
+    path("payment", views.payment, name='payment'),
+    path("success", views.success, name='success'),
+    path("cancel", views.cancel, name='cancel'),
+
 ]
 
 urlpatterns = urlpatterns + \
