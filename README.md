@@ -6,6 +6,7 @@ to start the website follow these steps:
 
 1. extract files in a folder
 2. create an virtual enviroment(use python 3.8)
+3. if you are using a different version you will face some problems while installing dependencies so reach me asap for that.
 3. check python version using "python --version"
 4. command for virtual enviroment is "python -m venv nameofenv"
 5. activate venv using "nameofenv\scripts\activate"
