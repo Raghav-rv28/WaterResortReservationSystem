@@ -15,5 +15,6 @@ to start the website follow these steps:
 8. then use "python manage.py runserver".
 9. local link "https://127.0.0.1:8000"
 
-
-
+WORK LEFT:
+1. add blog,hotel,services,contact page
+2. try to add a mybooking page
