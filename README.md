@@ -17,4 +17,3 @@ to start the website follow these steps:
 
 WORK LEFT:
 1. add blog,hotel,services,contact page
-2. try to add a mybooking page
