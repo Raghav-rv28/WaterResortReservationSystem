@@ -4,26 +4,84 @@ from django.http import Http404
 from django.http import HttpResponse
 import pdb
 from django.core.mail import send_mail
+from django.forms import inlineformset_factory
+from django.contrib.auth.forms import UserCreationForm
+
+from django.contrib.auth import authenticate, login, logout
+
+from django.contrib import messages
+
+from django.contrib.auth.decorators import login_required
+
+
 # Create your views here.
 
+from .forms import CreateUserForm
 
+
+def register(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        form = CreateUserForm()
+        if request.method == 'POST':
+            form = CreateUserForm(request.POST)
+            if form.is_valid():
+                form.save()
+                user = form.cleaned_data.get('username')
+                messages.success(request, 'Account was created for ' + user)
+
+                return redirect('login')
+
+        context = {'form': form}
+        return render(request, 'register.html', context)
+
+
+def loginPage(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                messages.info(request, 'Username OR password is incorrect')
+
+        context = {}
+        return render(request, 'login.html', context)
+
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
+
+
+@login_required(login_url='login')
 def room(request):
     ro = models.rooms.objects.all()
     return render(request, "room.html", {"ro": ro})
 
 
+@login_required(login_url='login')
 def search(request):
     ro = models.rooms.objects.all()
     val1 = request.POST['num1']
-
     return render(request, "search.html", {"ro": ro, "val1": val1})
 
 
+@login_required(login_url='login')
 def book(request, obj_id):
     request.session['val700'] = obj_id
     return render(request, "booking.html")
 
 
+@login_required(login_url='login')
 def confirm(request):
     val8 = int(request.POST['adult'])
     val10 = int(request.POST['child'])
@@ -42,6 +100,7 @@ def confirm(request):
     return render(request, "confirm.html", {'cost': cost})
 
 
+@login_required(login_url='login')
 def payment(request):
     if 'val700' not in request.session:
         return redirect('/')
@@ -49,6 +108,7 @@ def payment(request):
     return render(request, "Payment.html", {'cost': cost})
 
 
+@login_required(login_url='login')
 def success(request):
 
     guest1 = models.guest()
@@ -73,6 +133,7 @@ def success(request):
     return render(request, "success.html")
 
 
+@login_required(login_url='login')
 def cancel(request):
     del request.session['val700']
     return redirect('/')

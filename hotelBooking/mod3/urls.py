@@ -22,13 +22,19 @@ from hotels import views
 
 urlpatterns = [
     path('', home_view, name='home'),
-    path('booking/', include('hotels.urls')),
-    path("book/<obj_id>", views.book, name='book'),
     path('admin/', admin.site.urls),
+
     path('contact/', contact_view, name='contact'),
     path('services/', services_view, name='services'),
     path('blog/', blog_view, name='blog'),
     path('hotel/', hotel_view, name='hotel'),
+
+    path('login/', views.loginPage, name='login'),
+    path('logout/', views.logoutUser, name="logout"),
+    path('register/', views.register, name='register'),
+
+    path('booking/', include('hotels.urls')),
+    path("book/<obj_id>", views.book, name='book'),
     path("search", views.search, name='search'),
     path("confirm", views.confirm, name='confirm'),
     path("payment", views.payment, name='payment'),

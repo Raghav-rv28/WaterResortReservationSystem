@@ -7,12 +7,22 @@
         <ul class="sf-menu" id="fh5co-primary-menu">
             <li><a class="active" href="index.html">Home</a></li>
             <li>
-                <a href="hotel.html" class="fh5co-sub-ddown">Hotel Facilites</a>
+                <a href="{%url 'hotel' %}" class="fh5co-sub-ddown">Hotel Facilites</a>
 
             </li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">About Us</a></li>
+           <li><a href="{%url 'services' %}">Services</a></li>
+            <li><a href="{%url 'blog' %}">Blog</a></li>
+
+            {% if request.user.is_authenticated %}
+                <li><a href="#">Hello, {{request.user}}</a></li>
+                <li><a  href="{% url 'logout' %}">Logout</a></li>
+            {% endif %}
+            {% if request.user.is_anonymous %}
+            <li><a href="{%url 'register' %}">Register</a></li>
+            <li><a href="{%url 'login' %}">Login</a></li>
+            {% endif %}
+
+
         </ul>
     </nav>
 </div>
