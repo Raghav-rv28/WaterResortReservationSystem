@@ -32,6 +32,7 @@ urlpatterns = [
     path('login/', views.loginPage, name='login'),
     path('logout/', views.logoutUser, name="logout"),
     path('register/', views.register, name='register'),
+    path('mybooking/', views.mybooking, name='mybooking'),
 
     path('booking/', include('hotels.urls')),
     path("book/<obj_id>", views.book, name='book'),

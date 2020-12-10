@@ -22,6 +22,7 @@ class guest(models.Model):
     Identity_no = models.CharField(max_length=100)
     Room_code = models.IntegerField()
     No_of_nights = models.IntegerField()
+    Email = models.CharField(max_length=100, default='sample@gmail.com')
 
     def __str__(self):
         return self.Head_name

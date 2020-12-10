@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+{% block content %}
+
+<div class="row">
+    {%for guest in guest  %}
+<div class='room col-md-6 mb-4'>
+      <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+              <h4>Name of the Guest: {{guest.Head_name}}</h4>
+            </div>
+            <p class="card-text">Roomcode: {{guest.Room_code}}</p>
+            <p class="card-text">Email: {{guest.Email}}</p>
+            <p class="card-text">Number of Adults: {{guest.No_of_adults}}</p>
+            <p class="card-text">Number of Children: {{guest.no_of_children}}</p>
+            <p class="card-text">Identity Number: {{guest.Identity_no}}</p>
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -7,6 +7,8 @@ from django.core.mail import send_mail
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 
+from django.contrib.auth.models import User
+
 from django.contrib.auth import authenticate, login, logout
 
 from django.contrib import messages
@@ -69,6 +71,13 @@ def room(request):
 
 
 @login_required(login_url='login')
+def mybooking(request):
+    user = request.user
+    guest = models.guest.objects.all().filter(Email=user.email)
+    return render(request, "mybooking.html", {"guest": guest})
+
+
+@login_required(login_url='login')
 def search(request):
     ro = models.rooms.objects.all()
     val1 = request.POST['num1']
@@ -118,6 +127,7 @@ def success(request):
     guest1.Identity_no = request.session['val13']
     guest1.Room_code = request.session['val700']
     guest1.No_of_nights = request.session['val6']
+    guest1.Email = request.session['val150']
 
     guest1.save()
 
