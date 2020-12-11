@@ -1,3 +1,5 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html>
 
@@ -13,13 +15,14 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            background: #7abecc !important;
+            background-image: url({% static 'images/lux.jpg' %} );
+            background-size:cover;
         }
         .user_card {
             width: 350px;
             margin-top: auto;
             margin-bottom: auto;
-            background: #74cfbf;
+            background-image: url({% static 'images/back1.jpg' %} );
             position: relative;
             display: flex;
             justify-content: center;

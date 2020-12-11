@@ -1,5 +1,13 @@
+
+{%load static %}
+{%block content %}
+    <div id="fh5co-wrapper">
+    <div id="fh5co-page">
+    <div id="fh5co-header">
+
 <!DOCTYPE html>
 <html>
+
 
 <head>
     <title>Login</title>
@@ -13,14 +21,16 @@
         html {
             margin: 0;
             padding: 0;
-            height: 100%;
-            background: #7abecc !important;
+            height: 100%; 
+            background-image: url({% static 'images/amb1.jpg' %} );
+            background-size:cover;
+            
         }
         .user_card {
             width: 350px;
             margin-top: auto;
             margin-bottom: auto;
-            background: #74cfbf;
+           background-image: url({% static 'images/amb1.jpg' %} );
             position: relative;
             display: flex;
             justify-content: center;
@@ -126,3 +136,4 @@
 </body>
 
 </html>
+{% endblock %}
