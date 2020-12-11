@@ -15,5 +15,10 @@ to start the website follow these steps:
 8. then use "python manage.py runserver".
 9. local link "https://127.0.0.1:8000"
 
-WORK LEFT:
-1. add blog,hotel,services,contact page
+if you are downloading the project the photos for rooms might not load since they are connected with the database and database
+encoding saves the data and file location based on each computer uniquely. Sorry for Trouble!
+
+Back End Login:
+Admin
+Password
+
